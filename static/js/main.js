@@ -8,7 +8,9 @@ let isHighContrast = false;
 let speechSynthesis = window.speechSynthesis;
 
 // API 기본 URL
-const API_BASE_URL = 'http://localhost:5000/api';
+   const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+       ? 'http://localhost:5000/api'
+       : `${window.location.protocol}//${window.location.host}/api`;
 
 // DOM 요소들
 const userInfoModal = document.getElementById('user-info-modal');
